@@ -18,6 +18,7 @@ require (
 	github.com/elazarl/goproxy v0.0.0-20230808193330-2592e75ae04a // indirect
 	github.com/fsnotify/fsnotify v1.6.0 // indirect
 	github.com/google/go-cmp v0.6.0 // indirect
+	github.com/google/subcommands v1.2.0 // indirect
 	github.com/nxadm/tail v1.4.8 // indirect
 	github.com/paketo-buildpacks/packit v1.3.1 // indirect
 	github.com/pkg/errors v0.9.1 // indirect

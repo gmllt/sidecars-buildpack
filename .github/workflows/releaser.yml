@@ -54,6 +54,7 @@ jobs:
       - name: package
         run: |
           source .envrc
+          go get github.com/cloudfoundry/libbuildpack/packager/buildpack-packager
           go install github.com/cloudfoundry/libbuildpack/packager/buildpack-packager
           buildpack-packager -any-stack -version "${GITHUB_REF_NAME:1}"
           buildpack-packager -stack=cflinuxfs3 -version "${GITHUB_REF_NAME:1}"

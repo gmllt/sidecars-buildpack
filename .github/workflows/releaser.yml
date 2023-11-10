@@ -54,14 +54,14 @@ jobs:
       - name: package
         run: |
           source .envrc
-          go get github.com/cloudfoundry/libbuildpack/packager/buildpack-packager@v0.0.0-20230404152448-8da916cb09fe
-          go install github.com/cloudfoundry/libbuildpack/packager/buildpack-packager@v0.0.0-20230404152448-8da916cb09fe
-          buildpack-packager -any-stack -version "${GITHUB_REF_NAME:1}"
-          buildpack-packager -stack=cflinuxfs3 -version "${GITHUB_REF_NAME:1}"
-          buildpack-packager -stack=cflinuxfs4 -version "${GITHUB_REF_NAME:1}"
-          buildpack-packager -cached -any-stack -version "${GITHUB_REF_NAME:1}"
-          buildpack-packager -cached -stack=cflinuxfs3 -version "${GITHUB_REF_NAME:1}"
-          buildpack-packager -cached -stack=cflinuxfs4 -version "${GITHUB_REF_NAME:1}"
+          go get github.com/cloudfoundry/libbuildpack/packager/buildpack-packager
+          go install github.com/cloudfoundry/libbuildpack/packager/buildpack-packager
+          buildpack-packager build -any-stack -version "${GITHUB_REF_NAME:1}"
+          buildpack-packager build -stack=cflinuxfs3 -version "${GITHUB_REF_NAME:1}"
+          buildpack-packager build -stack=cflinuxfs4 -version "${GITHUB_REF_NAME:1}"
+          buildpack-packager build -cached -any-stack -version "${GITHUB_REF_NAME:1}"
+          buildpack-packager build -cached -stack=cflinuxfs3 -version "${GITHUB_REF_NAME:1}"
+          buildpack-packager build -cached -stack=cflinuxfs4 -version "${GITHUB_REF_NAME:1}"
 
       - name: create release
         uses: softprops/action-gh-release@v1
